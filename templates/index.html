@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Say Hello</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  </head>
+  <body>
+    <img src="https://www.vectorstock.com/royalty-free-vector/just-say-hello-for-world-day-background-vector-27231189">
+    <br>
+    <form action="greet" method="post">
+      {% for message in get_flashed_messages()%}
+          <p>{{message}}</>
+      {% endfor %}
+      <br>
+      <input type="text" name="name_input">
+      <br>
+      <input type="submit" value="GREET" id="greet">
+    </form>
+  </body>
+</html>
